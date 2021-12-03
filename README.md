@@ -1,6 +1,4 @@
-<img src ="https://static.wikia.nocookie.net/wiki-de-rick-morty/images/6/60/Rick_and_Morty.png/revision/latest?cb=20210623034924&path-prefix=es"/>
-
-<h1>Challenge <i>made by Arian Cejas  </i> </h1> 
+<h1>Server Challenge <i>made by Arian Cejas  </i> </h1> 
 
 
  ```
@@ -14,19 +12,16 @@
 </summary>
 <br/>
 <p>
-👉 collects data from the <a href="https://rickandmortyapi.com/"><b> Rick and Morty API </b> </a>, simoultaneously from various pages, it process them and returns you a kindly JSON object with irrelevant info from some of the resources that the API provides to us <br/><i>(For example, how much times the character "l" appears in every single location name )</i> 
+👉 its a basic RESTApi with endpoints that allows you to register, login and get a list of users (only if you have a login token) 
 </p>
 <br/>
 </details>
-
+<br/>
 <details>
 <summary>
 <b>How I 🏃 this application?</b>
 </summary>
 <br/>
-<h3>
-Well, its simply...
-</h3>
 <br/>
 
 ```
@@ -48,42 +43,32 @@ or
 npm start
 ```
 <br/>
-<p> if everything its all right, in the terminal you will see ` "Running on port <i> **port setted in .env** </i>" ` </p>
-<br/>
-<h3><b>...or directly, test it with:</b></h3>
-<br/>
+<p> if everything its all right, in the terminal you will see "Running on port <i> 4000 </i>"</p>
 
 ```
-npm test
+after of running the app, you have to you have to be sure that the application connected correctly with the Mongo database
 ```
-or
-```
-yarn test
-```
-<br/>
 
- `then open the terminal and see the magic!`
+## If you have any trouble, please be sure that the port in the DB_DEV_URI env variable matchs with the port that you have established in your MongoDB local
 
-<br/>
+`by default, the port is 27017`
+
 </details>
-
+<br/>
 <details>
 <summary>
-<b> Da routes 📡 </b>
+<b> The routes </b>
 
 </summary>
 <br/>
 
 ### /api/v1
 
-   |Method|Route|Description|    
-|----|-----|-------|  
-|GET|_/char_|**How much times the first letter of the resource appears in all the elements (of that resource)**|
-|GET|_/episodes_|**A episodes list with its name, episode, and an array with all the origin names (locations) of all the characters that appears in that episode**|
+   |Method|Route|Description|required Data|   
+|----|-----|-------|  -------|    
+|POST|_/auth/signin_|**its responds with a success or a failure**| userName, email, password en _req.body_
+|POST|_/auth/login_|**its responds with public info about your account, and a JWT token**| email, password in _req.body_
+|GET|_/users_|**A list with all the users**|Bearer token in authorization header _of /auth/login endpoint_
 
 
 </details>
-<br/>
-<h2>And remember...  </h2>
-
-<img src ="https://c.tenor.com/fzMQF112Sb0AAAAC/wubba-lubba-dub-dub-rick-sanchez.gif"/>
