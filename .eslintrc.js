@@ -12,6 +12,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    "no-param-reassign": 0,
     'import/extensions': [
       'error',
       'ignorePackages',
